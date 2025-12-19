@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NearbyOffers</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <!-- App CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="app-header">
+        <div class="search-bar">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search offers, places...">
+        </div>
+    </header>
+
+    <!-- Category Filter Bar (Visible in List Views mainly, but good to have handy) -->
+    <div id="category-filter" class="category-filter">
+        <button class="category-chip active" data-category="all">All</button>
+        <button class="category-chip" data-category="food">Food</button>
+        <button class="category-chip" data-category="shopping">Shopping</button>
+        <button class="category-chip" data-category="services">Services</button>
+        <button class="category-chip" data-category="entertainment">Fun</button>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Map View -->
+        <section id="map-view" class="view-section">
+            <div id="map"></div>
+        </section>
+
+        <!-- Offers View -->
+        <section id="offers-view" class="view-section hidden">
+            <div id="offers-list" class="list-container">
+                <!-- Offers injected here -->
+                <div class="skeleton card" style="height: 200px;"></div>
+                <div class="skeleton card" style="height: 200px;"></div>
+            </div>
+        </section>
+
+        <!-- Places View -->
+        <section id="places-view" class="view-section hidden">
+            <div id="places-list" class="list-container">
+                <!-- Places injected here -->
+                <div class="skeleton card" style="height: 200px;"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active" data-view="map">
+            <span class="fas fa-map-marked-alt"></span>
+            Map
+        </a>
+        <a href="#" class="nav-item" data-view="offers">
+            <span class="fas fa-tag"></span>
+            Offers
+        </a>
+        <a href="#" class="nav-item" data-view="places">
+            <span class="fas fa-store"></span>
+            Places
+        </a>
+    </nav>
+
+    <!-- Scripts -->
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- App Modules -->
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
